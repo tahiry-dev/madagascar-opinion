@@ -3,4 +3,6 @@ class Opinion < ApplicationRecord
 
     has_many :opinion_categories
     has_many :categories,  through: :opinion_categories
+
+    validates :text, presence: true, length: { minimum: 10 }
 end
