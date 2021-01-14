@@ -1,0 +1,23 @@
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+        
+        <%= image_tag("forms/welcome-madagascar.png", class: "welcome-img") %>
+
+        <%= form_with(model: @user, local: true) do |f| %>
+
+            <%= render 'shared/error_messages' %>
+
+            <%= f.label :username %>
+            <%= f.text_field :username, class: 'form-control' %>
+
+            <%= f.label :fullname %>
+            <%= f.text_field :fullname, class: 'form-control' %>
+
+            <%= f.submit "Create my account", class: "btn create-account-btn" %> 
+            
+        <% end %>
+
+    </div>
+    
+</div>
