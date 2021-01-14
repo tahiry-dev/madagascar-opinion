@@ -36,11 +36,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_041000) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "followings", force: :cascade do |t|
     t.integer "follower_id"
@@ -50,13 +45,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_041000) do
     t.index ["followed_id"], name: "index_followings_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_followings_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_followings_on_follower_id"
-  end
-
-  create_table "opinion_categories", force: :cascade do |t|
-    t.integer "opinion_id"
-    t.string "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "opinions", force: :cascade do |t|
