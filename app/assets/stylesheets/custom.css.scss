@@ -1,1 +1,107 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+//navigation
+
+$v-btn-color: #586A80;
+$icon-color: #366D98;
+$white-label: #FEFEFC;
+
+.navigations {
+  display: flex;
+}
+
+.horizontal-menu {
+  width: 85%;
+}
+
+.navbar {
+  background-color: #53A7E7;
+}
+
+.home-img {
+  width: 70px;
+  border-radius: 5%; 
+}
+
+.navigation > p {
+  padding: 8.792%;
+  margin-bottom: 0;
+}
+
+.name {
+  color: $white-label;
+}
+
+.navbar-nav > li {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+.fas {
+  color: $icon-color;
+}
+
+.fas:hover {
+  color: lighten($icon-color, 15%);
+}
+
+.mug {
+  color: $white-label;
+  margin-left: 25%;
+  margin-bottom: 15%;
+}
+
+.mug:hover {
+  color: rgb(235, 229, 229)
+}
+
+.sidebar {
+  background-color: #1B2A3D;
+  height: 100vh;
+  width: 15%;
+}
+
+.v-menu {
+   color: $v-btn-color;
+   margin-left: 10%;
+   margin-top: 15%;
+}
+
+.v-menu-left {
+  color: $v-btn-color;
+  margin-left: -16%;
+  margin-top: 15%;
+}
+
+.v-menu:hover, v-menu-left:hover {
+  text-decoration: none;
+  color: darken($v-btn-color, 10%)
+}
+
+.following-stats, .follower-stats {
+  color: $white-label;
+  margin-bottom: 0;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.following-label, .follower-label {
+  color: $v-btn-color;
+}
+
+.relationship {
+  display: flex;
+  padding-left: 10%;
+  border-top: 1px solid rgb(15, 15, 15);
+  border-bottom: 1px solid rgb(15, 15, 15);
+}
+
+.follower {
+  border-left: 1px solid rgb(15, 15, 15);
+  margin-left: 7%;
+}
+
+.follower-stats, .follower-label {
+  margin-left: 15%;
+}
+

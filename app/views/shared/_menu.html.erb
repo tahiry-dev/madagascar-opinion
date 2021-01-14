@@ -1,0 +1,57 @@
+ <div class="navigations">
+    <div class="sidebar">
+      <nav class="navigation">
+        <p><%= image_tag("navigation/home.jpg", class: "home-img") %><span class="name ml-2">MY NAME</span></p>
+        <div class="relationship">
+            <div class="following">
+              <p class="following-stats">184</p>
+              <p class="following-label">Following</p>
+            </div>
+            <div class="follower">
+              <p class="follower-stats">823</p>
+              <p class="follower-label">Followers</p>
+            </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item nav-sidebar">
+            <span><i class="fas fa-home v-menu-left"></i><%= link_to 'HOME', new_user_path, class: "v-menu" %></span>
+          </li>
+          <li class="nav-item">
+            <span><i class="fas fa-at v-menu-left"></i><%= link_to 'CONNECT', new_user_path, class: "v-menu" %></span>
+          </li>
+          <li class="nav-item">
+            <span><i class="fas fa-hashtag v-menu-left"></i><%= link_to 'DISCOVER', new_user_path, class: "v-menu" %></span>
+          </li>
+          <li class="nav-item">
+             <span><i class="fas fa-user v-menu-left"></i><%= link_to 'PROFILE', new_user_path, class: "v-menu" %></span>
+          </li>
+          <li class="nav-item">
+             <span><i class="fas fa-chart-pie v-menu-left"></i><%= link_to 'STATISTICS', new_user_path, class: "v-menu" %></span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="horizontal-menu">
+      <nav class="navbar navbar-expand-md">
+        <%= link_to(fa_icon "mug-hot 4x", url: '#', class: 'mug') %>
+        <div class="ml-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= link_to(fa_icon "feather-alt", url: '#', class: 'fas') %>
+            </li>
+            <li class="nav-item">
+              <%= link_to(fa_icon "envelope", url: '#', class: 'fas') %>
+            </li>
+            <li class="nav-item">
+              <%= link_to(fa_icon "search", url: '#', class: 'fas') %> 
+            </li>
+            <li class="nav-item">
+              <%= link_to(fa_icon "cog", url: '#', class: 'fas') %>  
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+  </div>
