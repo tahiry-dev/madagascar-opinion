@@ -1,0 +1,29 @@
+<div class="opinion-container">
+  <div class="opinion-heading">
+    <p class="h5">OPINIONS</p>
+    <hr>
+  </div>
+
+  <div class="opinion-body ml-5">
+    <div class="container">
+        <%= form_with(model: @opinion, local: true) do |f| %>
+
+            <div class="form-group">
+              <%= f.label :Share_something, class: "opinion-label" %>
+              <%= f.text_field :text %>
+            </div>
+
+            <div class="form-group">
+
+              <%= f.label :you_can_add_an_image, class: "opinion-label"  %>
+              <%= f.file_field :image, class: "opinion-label" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Share", class: "opinion-sharing-button" %>
+            </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>

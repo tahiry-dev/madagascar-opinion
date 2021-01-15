@@ -1,0 +1,14 @@
+<%= render 'shared/menu', obj: @user %> 
+
+  <% if @user.coverimage.attached? %>
+
+      <p><%= image_tag @user.coverimage, class: "cover-img" %></p>
+      <% else %>
+        <p><%= image_tag("navigation/cover.jpg", class: "cover-img")%></p>
+      <% end %>
+
+  <div class="body-container">
+    <%= render 'shared/opinions' %>
+    
+
+  </div>

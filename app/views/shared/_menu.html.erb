@@ -1,7 +1,12 @@
  <div class="navigations">
-    <div class="sidebar">
+
+     <div class="sidebar">
       <nav class="navigation">
-        <p><%= image_tag("navigation/home.jpg", class: "home-img") %><span class="name ml-2">MY NAME</span></p>
+      <% if obj.photo.attached? %>
+        <p><%= image_tag obj.photo, class: "home-img" %><span class="name ml-2"><%= obj.username %></span></p>
+      <% else %>
+        <p><%= image_tag("navigation/home.jpeg", class: "home-img")%><span class="name ml-2"><%= obj.username %></span></p>
+      <% end %>
         <div class="relationship">
             <div class="following">
               <p class="following-stats">184</p>
@@ -20,13 +25,10 @@
             <span><i class="fas fa-at v-menu-left"></i><%= link_to 'CONNECT', new_user_path, class: "v-menu" %></span>
           </li>
           <li class="nav-item">
-            <span><i class="fas fa-hashtag v-menu-left"></i><%= link_to 'DISCOVER', new_user_path, class: "v-menu" %></span>
+             <span><i class="fas fa-cloud-upload-alt v-menu-left"></i><%= link_to 'UPLOAD', edit_user_path(obj), class: "v-menu" %></span>
           </li>
           <li class="nav-item">
-             <span><i class="fas fa-user v-menu-left"></i><%= link_to 'PROFILE', new_user_path, class: "v-menu" %></span>
-          </li>
-          <li class="nav-item">
-             <span><i class="fas fa-chart-pie v-menu-left"></i><%= link_to 'STATISTICS', new_user_path, class: "v-menu" %></span>
+             <span><i class="fas fa-sign-out-alt v-menu-left"></i><%= link_to 'LOGOUT', logout_path, method: :delete, class: "v-menu" %></span>
           </li>
         </ul>
       </nav>
@@ -46,12 +48,6 @@
             <li class="nav-item">
               <%= link_to(fa_icon "search", url: '#', class: 'fas') %> 
             </li>
-            <li class="nav-item">
-              <%= link_to(fa_icon "cog", url: '#', class: 'fas') %>  
-            </li>
           </ul>
         </div>
       </nav>
-    </div>
-
-  </div>

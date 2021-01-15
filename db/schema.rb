@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_041000) do
+ActiveRecord::Schema.define(version: 2021_01_15_132042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2021_01_13_041000) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "followings", force: :cascade do |t|
     t.integer "follower_id"
@@ -47,11 +52,13 @@ ActiveRecord::Schema.define(version: 2021_01_13_041000) do
     t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
+
   create_table "opinions", force: :cascade do |t|
     t.string "text"
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
