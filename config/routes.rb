@@ -10,4 +10,12 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
+  get 'home', to: 'html_pages#home'
+
+  post 'home', to: 'opinions#create'
+
+  get 'contact', to: 'contacts#new'
+
+  post 'contact', to: 'contacts#create'
+
 end

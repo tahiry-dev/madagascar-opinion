@@ -6,19 +6,13 @@
 
   <div class="opinion-body ml-5">
     <div class="container">
-        <%= form_with(model: @opinion, local: true) do |f| %>
-
+        <%= form_with(local: true) do |f| %>
+            
             <div class="form-group">
               <%= f.label :Share_something, class: "opinion-label" %>
               <%= f.text_field :text %>
             </div>
-
-            <div class="form-group">
-
-              <%= f.label :you_can_add_an_image, class: "opinion-label"  %>
-              <%= f.file_field :image, class: "opinion-label" %>
-            </div>
-
+            
             <div class="form-group">
               <%= f.submit "Share", class: "opinion-sharing-button" %>
             </div>
@@ -26,4 +20,31 @@
         <% end %>
     </div>
   </div>
+
+  <div class="opinion-list ml-5 mt-5">
+
+    <div class="opinion-list-heading mb-2">
+      <p class="h5"><%= @opinions.count %> New Opinions</p>
+    </div>
+
+    <% @opinions.each do | opinion | %>
+      <div class="opinions-info">
+          <div class="opinions-info-left">
+
+            <% if opinion.author.photo.attached? %>
+              <%= image_tag opinion.author.photo, class: "opinion-img" %>
+            <% else %>
+              <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
+            <% end %>
+
+          </div>
+          <div class="opinions-info-right">
+            <h5><%= opinion.author.username %></h5>
+            <p><%= opinion.text %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
+

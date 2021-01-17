@@ -1,6 +1,9 @@
 class Opinion < ApplicationRecord
+
     belongs_to :author, class_name: "User"
-    
-    has_many_attached :images
+
+    default_scope -> { order(created_at: :desc) }
+
     validates :text, presence: true, length: { minimum: 10 }
+    
 end

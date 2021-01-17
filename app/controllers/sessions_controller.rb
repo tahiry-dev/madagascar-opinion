@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if user
         log_in user
         flash[:success] = "Welcome Back!"
-        redirect_to users_path
+        redirect_to home_path
   
       else
         flash.now[:danger] = 'Invalid Username, Please try again'

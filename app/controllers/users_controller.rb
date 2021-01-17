@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Madagascar-Opinion"
-      redirect_to users_path
+      redirect_to home_path
     else
       render :new
     end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(params.require(:user).permit(:photo, :coverimage))
       flash[:success] = "your photo was uploaded successfully."
-      redirect_to users_path
+      redirect_to home_path
     else
       render 'edit'
     end

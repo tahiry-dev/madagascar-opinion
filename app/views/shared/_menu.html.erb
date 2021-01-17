@@ -19,13 +19,11 @@
         </div>
         <ul class="navbar-nav">
           <li class="nav-item nav-sidebar">
-            <span><i class="fas fa-home v-menu-left"></i><%= link_to 'HOME', new_user_path, class: "v-menu" %></span>
+            <span><i class="fas fa-home v-menu-left"></i><%= link_to 'HOME', home_path, class: "v-menu" %></span>
           </li>
+        
           <li class="nav-item">
-            <span><i class="fas fa-at v-menu-left"></i><%= link_to 'CONNECT', new_user_path, class: "v-menu" %></span>
-          </li>
-          <li class="nav-item">
-             <span><i class="fas fa-cloud-upload-alt v-menu-left"></i><%= link_to 'UPLOAD', edit_user_path(obj), class: "v-menu" %></span>
+             <span><i class="fas fa-user-alt v-menu-left"></i><%= link_to 'Profile', user_path(obj), class: "v-menu" %></span>
           </li>
           <li class="nav-item">
              <span><i class="fas fa-sign-out-alt v-menu-left"></i><%= link_to 'LOGOUT', logout_path, method: :delete, class: "v-menu" %></span>
@@ -40,10 +38,12 @@
         <div class="ml-auto">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <%= link_to(fa_icon "feather-alt", url: '#', class: 'fas') %>
+              <%= link_to(fa_icon "envelope", url: '#', class: 'fas') %>
             </li>
             <li class="nav-item">
-              <%= link_to(fa_icon "envelope", url: '#', class: 'fas') %>
+               <%= link_to edit_user_path(obj) do %>
+                  <%= fa_icon "cloud-upload-alt", class: 'fas' %>
+               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to(fa_icon "search", url: '#', class: 'fas') %> 
