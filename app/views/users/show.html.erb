@@ -52,21 +52,30 @@
 
   </div>
 
-  <div class="right-profile">
+  <div class="right-profile mt-3">
     <% if @user.photo.attached? %>
-        <p><%= image_tag @user.photo, class: "home-img" %><span class="name ml-2"><%= @user.username %></span></p>
+        <p><%= image_tag @user.photo, class: "right-profile-img" %><span class="name ml-2"><%= @user.username %></span></p>
       <% else %>
-        <p><%= image_tag("navigation/home.jpeg", class: "home-img")%><span class="name ml-2"><%= @user.username %></span></p>
+        <p><%= image_tag("navigation/home.jpeg", class: "right-profile-img")%><span class="name ml-2"><%= @user.username %></span></p>
       <% end %>
-        <div class="relationship">
-            <div class="following">
-              <p class="following-stats">184</p>
-              <p class="following-label">Following</p>
-            </div>
-            <div class="follower">
-              <p class="follower-stats">823</p>
-              <p class="follower-label">Followers</p>
-            </div>
+        <h4 class="text-center"><%= @user.username.upcase %></h4>
+        <div class="user-stats">
+          <div class="pl-3">
+            <p class="stats text-center"><%= @user.opinions.count %></p>
+            <p class="stats-label">Opinions</p>
+          </div>
+          <div class="user-following pl-2">
+            <p class="text-center">184</p>
+            <p class="">Following</p>
+          </div>
+          <div class="user-follower pl-2">
+            <p class="text-center">823</p>
+            <p class="">Followers</p>
+          </div>
         </div>
+    <div class="followed_by_text-container ml-4 mt-4">
+      <h5 class="followed_by_text">FOLLOWED BY</h5>
+      <hr>
+    </div>
   </div>
 </div>

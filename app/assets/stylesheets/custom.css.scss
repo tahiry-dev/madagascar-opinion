@@ -166,7 +166,7 @@ input, textarea, select {
 //Opinions
 
 .opinion-container{
-  width: 80%;
+  width: 75%;
 } 
 
 .opinion-heading {
@@ -243,7 +243,7 @@ input, textarea, select {
 .follow-hr {
   width: 80%;
   position: absolute;
-  top: 4.5%;
+  top: 47px;
   left: 7%;
 }
 
@@ -253,4 +253,34 @@ input, textarea, select {
   width: 100%;
   height: 250px;
   border-radius: 2px;
+}
+
+.user-stats {
+  display: flex;
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.right-profile {
+  border-left: 1px solid rgba(128, 128, 128, 0.486);
+}
+
+.user-following, .user-follower {
+  border-left: $border;
+  margin-left: 14px;
+}
+
+.right-profile-img {
+  width: 50%;
+  height: 100px;
+  border-radius: 5%; 
+  margin-left: 27%;
+}
+
+.followed_by_text-container {
+  width: 88%;
+}
+
+.followed_by_text {
+  color: $v-btn-color;
 }
