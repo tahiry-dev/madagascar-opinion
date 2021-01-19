@@ -1,0 +1,91 @@
+<%= render 'shared/menu', obj: current_user %> 
+
+<div class="body-container">
+
+  <div class="opinion-container">
+    
+    <% if @user.coverimage.attached? %>
+        <p><%= image_tag @user.coverimage, class: "cover-img" %></p>
+    <% else %>
+        <p><%= image_tag("navigation/banner.jpg", class: "cover-img")%></p>
+    <% end %>
+    
+    <div class="opinion-heading">
+      <p class="h5">OPINIONS</p>
+      <hr>
+    </div>
+
+    <div class="opinion-list ml-5 mt-5">
+      <div class="opinion-list-heading mb-2">
+      <% if @user.opinions.empty? %>
+        <p class="h5">Currently, there are no opinion shared by <%= @user.username %></p>
+      <% else%>
+        <p class="h5">All <%= @user.username %> Opinions</p>
+      <% end %>
+      </div>
+        <% if @current_user.followings.include?(@user) %>
+          <% @user.opinions.each do | opinion | %>
+            <div class="opinions-info">
+                <div class="opinions-info-left">
+                  <% if @user.photo.attached? %>
+                    <%= image_tag @user.photo, class: "opinion-img" %>
+                  <% else %>
+                    <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
+                  <% end %>
+                </div>
+                <div class="opinions-info-right">
+                  <h5><%= @user.username %></h5>
+                  <p><%= opinion.text %></p>
+                </div>
+            </div>
+          <% end %>
+        <% end %>  
+       <%= link_to '>> Back to Home <<', home_path %>
+    </div>
+  </div>
+
+  <div class="right-profile mt-3">
+    <% if @user.photo.attached? %>
+        <p><%= image_tag @user.photo, class: "right-profile-img" %></p>
+      <% else %>
+        <p><%= image_tag("navigation/home.jpeg", class: "right-profile-img")%></p>
+      <% end %>
+         <%= render "users/follow_logic"%>
+        <h4 class="text-center"><%= @user.username.upcase %></h4>
+        <div class="user-stats">
+          <div class="pl-3">
+            <p class="stats text-center"><%= @user.opinions.count %></p>
+            <p class="stats-label">Opinions</p>
+          </div>
+          <div class="user-following pl-2">
+            <p class="text-center"><%= @user.followings.count %></p>
+            <p class="">Following</p>
+          </div>
+          <div class="user-follower pl-2">
+            <p class="text-center"><%= @user.followers.count %></p>
+            <p class="">Followers</p>
+          </div>
+        </div>
+    <div class="followed_by_text-container ml-4 mt-4">
+      <h5 class="followed_by_text">FOLLOWED BY</h5>
+      <hr>
+    </div>
+
+    <% @user.followers.each do | follower |%>
+         <div class="followers-info mt-3">
+            <div class="followers-info-left">
+              <%= link_to  profile_path(follower) do%>
+                <% if follower.photo.attached? %>
+                  <%= image_tag follower.photo, class: "opinion-img" %>
+                <% else %>
+                  <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
+                <% end %>
+              <% end %>
+            </div>
+            <div class="followers-info-right ml-3">
+              <h5><%= follower.username %></h5>
+            </div>
+        </div>
+    <% end %>
+  </div>
+</div>
