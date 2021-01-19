@@ -23,21 +23,23 @@
         <p class="h5">All <%= @user.username %> Opinions</p>
       <% end %>
       </div>
-       <% @user.opinions.each do | opinion | %>
-        <div class="opinions-info">
-            <div class="opinions-info-left">
-              <% if @user.photo.attached? %>
-                <%= image_tag @user.photo, class: "opinion-img" %>
-              <% else %>
-                <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
-              <% end %>
+        <% if @current_user.followings.include?(@user) %>
+          <% @user.opinions.each do | opinion | %>
+            <div class="opinions-info">
+                <div class="opinions-info-left">
+                  <% if @user.photo.attached? %>
+                    <%= image_tag @user.photo, class: "opinion-img" %>
+                  <% else %>
+                    <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
+                  <% end %>
+                </div>
+                <div class="opinions-info-right">
+                  <h5><%= @user.username %></h5>
+                  <p><%= opinion.text %></p>
+                </div>
             </div>
-            <div class="opinions-info-right">
-              <h5><%= @user.username %></h5>
-              <p><%= opinion.text %></p>
-            </div>
-        </div>
-      <% end %>
+          <% end %>
+        <% end %>  
        <%= link_to '>> Back to Home <<', home_path %>
     </div>
   </div>

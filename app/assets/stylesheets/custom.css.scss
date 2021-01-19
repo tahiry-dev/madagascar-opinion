@@ -1,10 +1,10 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-$v-btn-color: #586A80;
-$icon-color: #366D98;
-$white-label: #FEFEFC;
-$background: #F5F6F8;
-$navbar-background: #53A7E7;
+$v-btn-color: #586a80;
+$icon-color: #366d98;
+$white-label: #fefefc;
+$background: #f5f6f8;
+$navbar-background: #53a7e7;
 $border: 1px solid rgb(15, 15, 15);
 
 body {
@@ -28,7 +28,7 @@ body {
 .home-img {
   width: 50%;
   height: 80px;
-  border-radius: 5%; 
+  border-radius: 5%;
 }
 
 .navigation > p {
@@ -41,9 +41,9 @@ body {
 }
 
 .navbar-nav > li {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
 .fas {
   color: $icon-color;
@@ -60,19 +60,19 @@ body {
 }
 
 .mug:hover {
-  color: rgb(235, 229, 229)
+  color: rgb(235, 229, 229);
 }
 
 .sidebar {
-  background-color: #1B2A3D;
+  background-color: #1b2a3d;
   height: auto;
   width: 18%;
 }
 
 .v-menu {
-   color: $v-btn-color;
-   margin-left: 10%;
-   margin-top: 15%;
+  color: $v-btn-color;
+  margin-left: 10%;
+  margin-top: 15%;
 }
 
 .v-menu-left {
@@ -81,19 +81,22 @@ body {
   margin-top: 15%;
 }
 
-.v-menu:hover, v-menu-left:hover {
+.v-menu:hover,
+.v-menu-left:hover {
   text-decoration: none;
-  color: darken($v-btn-color, 10%)
+  color: darken($v-btn-color, 10%);
 }
 
-.following-stats, .follower-stats {
+.following-stats,
+.follower-stats {
   color: $white-label;
   margin-bottom: 0;
   margin-top: 20%;
   text-align: center;
 }
 
-.following-label, .follower-label {
+.following-label,
+.follower-label {
   color: $v-btn-color;
 }
 
@@ -109,7 +112,8 @@ body {
   margin-left: 10%;
 }
 
-.follower-stats, .follower-label {
+.follower-stats,
+.follower-label {
   margin-left: 25%;
 }
 
@@ -121,12 +125,15 @@ body {
 
 // forms
 
-input, textarea, select {
-  width: 100%; 
+input,
+textarea,
+select {
+  width: 100%;
   margin-bottom: 15px;
 }
 
-.create-account-btn, .login-btn {
+.create-account-btn,
+.login-btn {
   background-color: $icon-color;
   color: $white-label;
 }
@@ -139,6 +146,7 @@ input, textarea, select {
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -146,7 +154,7 @@ input, textarea, select {
 }
 
 .new-account-welcome {
-  color:$v-btn-color;
+  color: $v-btn-color;
 }
 
 .new-account-form {
@@ -165,25 +173,24 @@ input, textarea, select {
 
 //Opinions
 
-.opinion-container{
+.opinion-container {
   width: 75%;
-} 
+}
 
 .opinion-heading {
-  
   height: 100px;
 
   p {
-     margin: 27px 3%;
+    margin: 27px 3%;
   }
 
   hr {
     margin-top: 20px;
   }
-
 }
 
-.opinion-body, .opinion-list {
+.opinion-body,
+.opinion-list {
   width: 85%;
   border: 1px solid $v-btn-color;
   border-radius: 5px;
@@ -193,7 +200,7 @@ input, textarea, select {
 
 .opinion-sharing-button {
   width: 20%;
-  color: $v-btn-color
+  color: $v-btn-color;
 }
 
 .opinion-label {
@@ -217,11 +224,12 @@ input, textarea, select {
 .opinion-img {
   width: 80px;
   height: 80px;
-  border-radius: 5%;  
+  border-radius: 5%;
 }
 
 .opinions-info-right {
   margin-left: 2%;
+
   p {
     color: $v-btn-color;
   }
@@ -239,7 +247,7 @@ input, textarea, select {
 .follow-heading {
   margin-left: 5%;
   height: 79px;
- 
+
   p {
     margin-top: 28px;
   }
@@ -248,7 +256,7 @@ input, textarea, select {
 .who-to-follow-img {
   width: 30%;
   height: 50px;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 
 .follow-hr {
@@ -280,7 +288,8 @@ input, textarea, select {
   border-left: 1px solid rgba(128, 128, 128, 0.486);
 }
 
-.user-following, .user-follower {
+.user-following,
+.user-follower {
   border-left: $border;
   margin-left: 14px;
 }
@@ -288,13 +297,13 @@ input, textarea, select {
 .right-profile-img {
   width: 50%;
   height: 100px;
-  border-radius: 5%; 
+  border-radius: 5%;
   margin-left: 27%;
-  border: 1px solid red;
 }
 
 .followed_by_text-container {
   width: 88%;
+
   hr {
     margin-top: 30px;
   }
@@ -313,37 +322,48 @@ input, textarea, select {
   margin-left: 9%;
 }
 
-//pagination 
-
+//pagination
 
 .apple_pagination {
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
   text-align: center;
   padding: 1em;
-  cursor: default; }
-  .apple_pagination a, .apple_pagination span {
-    padding: 0.2em 0.3em; }
-  .apple_pagination .disabled {
-    color: #aaaaaa; }
-  .apple_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background-color: #bebebe;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.5;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
-    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
-  .apple_pagination a {
-    text-decoration: none;
-    color: black; }
-    .apple_pagination a:hover, .apple_pagination a:focus {
-      text-decoration: underline;
- }
+  cursor: default;
+}
+
+.apple_pagination a,
+.apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+
+.apple_pagination .disabled {
+  color: #aaa;
+}
+
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+
+.apple_pagination a:hover,
+.apple_pagination a:focus {
+  text-decoration: underline;
+}
 
 //relations
 

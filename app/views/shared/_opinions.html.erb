@@ -28,16 +28,16 @@
     </div>
 
     <% @opinions.each do | opinion | %>
-      <% if @current_user.followings.include?(opinion.author) %>
+      <% if @current_user.followings.include?(opinion.author) || @current_user.opinions.include?(opinion) %>
         <div class="opinions-info">
             <div class="opinions-info-left">
-
+            <%= link_to profile_path(opinion.author) do %>
               <% if opinion.author.photo.attached? %>
                 <%= image_tag opinion.author.photo, class: "opinion-img" %>
               <% else %>
                 <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
               <% end %>
-
+             <% end %>
             </div>
             <div class="opinions-info-right">
               <h5><%= opinion.author.username %></h5>
