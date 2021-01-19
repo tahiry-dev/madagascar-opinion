@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
   root "sessions#new"
 
-  resources :users
+  resources :users do
+    member do
+      get :followings, :followers
+    end
+  end
 
   get 'login', to: 'sessions#new'
 
@@ -14,8 +18,9 @@ Rails.application.routes.draw do
 
   post 'home', to: 'opinions#create'
 
-  get 'contact', to: 'contacts#new'
+  get '/profile/:id', to: 'html_pages#profile', as:'profile'
 
-  post 'contact', to: 'contacts#create'
+  resources :followings, only: [:create, :destroy]
 
+  
 end

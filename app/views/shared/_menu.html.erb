@@ -9,11 +9,11 @@
       <% end %>
         <div class="relationship">
             <div class="following">
-              <p class="following-stats">184</p>
+              <p class="following-stats"><%= obj.followings.count %></p>
               <p class="following-label">Following</p>
             </div>
             <div class="follower">
-              <p class="follower-stats">823</p>
+              <p class="follower-stats"><%= obj.followers.count%></p>
               <p class="follower-label">Followers</p>
             </div>
         </div>

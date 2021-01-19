@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   before_action :find_id, only: [:show, :edit, :update]
   before_action :logged_in_user, only: :index
 
-  def index
-    @users = User.all
-  end
 
+  def index
+    
+  end
+  
   def show
     
   end

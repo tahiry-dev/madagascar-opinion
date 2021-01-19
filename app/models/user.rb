@@ -13,4 +13,16 @@ class User < ApplicationRecord
 
     validates :username, presence: true
     validates :fullname, presence: true
+
+    def follow(other_user)
+        followings << other_user
+    end
+    
+    def unfollow(other_user)
+      followings.delete(other_user)
+    end
+    
+    def following?(other_user)
+      followings.include?(other_user)
+    end
 end

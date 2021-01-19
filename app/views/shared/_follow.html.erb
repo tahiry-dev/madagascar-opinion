@@ -3,4 +3,23 @@
         <p class="h5">WHO TO FOLLOW</p>
     </div>
     <hr class="follow-hr">
+    <div class="follow-body ml-4">
+        <% @users.each do |user| %>
+          <%if user != @current_user && !@current_user.followings.include?(user)%>
+            <%= link_to profile_path(user) do %>
+                <div class="who-to-follow-list d-flex mb-4">
+                   <% if user.photo.attached? %>
+                    <%= image_tag user.photo, class: "who-to-follow-img" %>
+                  <% else %>
+                    <%= image_tag("navigation/home.jpeg", class: "who-to-follow-img")%> 
+                  <% end %>
+
+                   <div class="who-to-follow-name ml-3 mt-2">
+                      <h5><%= user.username %></h5>
+                  </div>
+                </div>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
 </div>
