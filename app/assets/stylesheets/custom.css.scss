@@ -53,14 +53,10 @@ body {
   color: lighten($icon-color, 15%);
 }
 
-.mug {
-  color: $white-label;
-  margin-left: 25%;
-  margin-bottom: 15%;
-}
-
-.mug:hover {
-  color: rgb(235, 229, 229);
+.logo {
+  width: 11.7%;
+  height: 11.7%;
+  border-radius: 100%;
 }
 
 .sidebar {
