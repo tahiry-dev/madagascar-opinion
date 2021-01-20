@@ -6,7 +6,7 @@
     <% if @user.coverimage.attached? %>
         <p><%= image_tag @user.coverimage, class: "cover-img" %></p>
     <% else %>
-        <p><%= image_tag("navigation/banner.jpg", class: "cover-img")%></p>
+        <p><%= image_tag("navigation/cover.jpg", class: "cover-img")%></p>
     <% end %>
     
     <div class="opinion-heading">
