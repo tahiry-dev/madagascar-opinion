@@ -1,0 +1,8 @@
+<%= link_to profile_path(user) do %>
+    <div class="who-to-follow-list d-flex mb-4">
+       <%= check_for_photo(user) %>
+       <div class="who-to-follow-name ml-3 mt-2">
+          <h5><%= user.username %></h5>
+      </div>
+    </div>
+<% end %>
