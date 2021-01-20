@@ -7,7 +7,7 @@ module MenusHelper
     if user.photo.attached?
       image_tag user.photo, class: 'who-to-follow-img'
     else
-      image_tag('navigation/home.jpg', class: 'who-to-follow-img')
+      image_tag('navigation/home.jpeg', class: 'who-to-follow-img')
     end
   end
 
