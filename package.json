@@ -19,5 +19,8 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "3.17.x",
     "webpack-dev-server": "^3.11.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "2.x.x"
   }
 }
