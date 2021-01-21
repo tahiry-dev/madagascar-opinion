@@ -228,7 +228,7 @@ select {
 
   p {
     color: $v-btn-color;
-    max-width: 500px;
+    word-break: break-all;
   }
 }
 
