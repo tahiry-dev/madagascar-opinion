@@ -34,6 +34,8 @@ To get a local copy up and running follow these steps:
    
    Run rails db:migrate to migrate the database
    
+   Run yarn install
+   
    Run rails s
 
    Run http://localhost:3000/ in your browser to start the app
