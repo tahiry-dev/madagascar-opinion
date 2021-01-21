@@ -4,7 +4,7 @@ class HtmlPagesController < ApplicationController
   def home
     @opinion = current_user.opinions.build
     @opinions = Opinion.paginate(page: params[:page], per_page: 5).includes(:author)
-    @users = User.all
+    @users = User.all.includes(photo_attachment: :blob)
   end
 
   def profile

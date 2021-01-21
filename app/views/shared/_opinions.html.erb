@@ -10,7 +10,7 @@
             
             <div class="form-group">
               <%= f.label :Share_something, class: "opinion-label" %>
-              <%= f.text_field :text %>
+              <%= f.text_area :text %>
             </div>
             
             <div class="form-group">
@@ -35,7 +35,7 @@
               <% if opinion.author.photo.attached? %>
                 <%= image_tag opinion.author.photo, class: "opinion-img" %>
               <% else %>
-                <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
+                <%= image_tag("navigation/home.jpg", class: "opinion-img")%> 
               <% end %>
              <% end %>
             </div>

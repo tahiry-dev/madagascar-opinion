@@ -1,0 +1,13 @@
+  <% if @current_user.followings.include?(obj) %>
+    <% obj.opinions.each do | opinion | %>
+      <div class="opinions-info">
+          <div class="opinions-info-left">
+           <%= render "shared/check_profile_pic", obj:obj, style:"opinion-img" %>
+          </div>
+          <div class="opinions-info-right">
+            <h5><%= obj.username %></h5>
+            <p><%= opinion.text %></p>
+          </div>
+      </div>
+    <% end %>
+ <% end %> 

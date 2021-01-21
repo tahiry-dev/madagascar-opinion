@@ -3,12 +3,7 @@
 <div class="body-container">
 
   <div class="opinion-container">
-    <% if @user.coverimage.attached? %>
-        <p><%= image_tag @user.coverimage, class: "cover-img" %></p>
-    <% else %>
-        <p><%= image_tag("navigation/banner.jpg", class: "cover-img")%></p>
-    <% end %>
-    
+    <%= check_for_cover_image(@user) %>
     <div class="opinion-heading">
       <p class="h5">OPINIONS</p>
       <hr>
@@ -21,11 +16,7 @@
        <% @user.opinions.each do | opinion | %>
         <div class="opinions-info">
             <div class="opinions-info-left">
-              <% if @user.photo.attached? %>
-                <%= image_tag @user.photo, class: "opinion-img" %>
-              <% else %>
-                <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
-              <% end %>
+              <%= render "shared/check_profile_pic", obj:@user, style: "opinion-img" %>
             </div>
             <div class="opinions-info-right">
               <h5><%= @user.username %></h5>
@@ -38,11 +29,7 @@
   </div>
 
   <div class="right-profile mt-3">
-    <% if @user.photo.attached? %>
-        <p><%= image_tag @user.photo, class: "right-profile-img" %></p>
-      <% else %>
-        <p><%= image_tag("navigation/home.jpeg", class: "right-profile-img")%></p>
-      <% end %>
+     <%= render "shared/check_profile_pic", obj:@user, style: "right-profile-img" %>
         <div class="alignment"></div>
         <h4 class="text-center"><%= @user.username.upcase %></h4>
         <div class="user-stats">
@@ -67,11 +54,7 @@
          <div class="followers-info mb-3">
             <div class="followers-info-left">
               <%= link_to  profile_path(follower) do%>
-                <% if follower.photo.attached? %>
-                  <%= image_tag follower.photo, class: "opinion-img" %>
-                <% else %>
-                  <%= image_tag("navigation/home.jpeg", class: "opinion-img")%> 
-                <% end %>
+                 <%= render "shared/check_profile_pic", obj:follower, style: "opinion-img" %>
               <% end %>
             </div>
             <div class="followers-info-right ml-3">
