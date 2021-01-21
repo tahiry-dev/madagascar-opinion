@@ -17,7 +17,7 @@ The app is not yet optimized for the front-end, so works better on Firefox
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://obscure-escarpment-37416.herokuapp.com/)
 
 
 ## Getting Started
