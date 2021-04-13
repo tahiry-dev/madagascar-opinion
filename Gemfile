@@ -53,7 +53,7 @@ end
 
 gem 'rubocop', '~>0.81.0'
 
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
